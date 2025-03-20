@@ -270,6 +270,24 @@ def fælles_punkt(spektrum_blå, spektrum_rød, blå_punkt, rød_punkt, samle ):
     minima_rød = np.argmin(spektrum_rød[rød_punkt-20:rød_punkt+20])+rød_punkt-20
     
     figur_mappe = "Grafer"
+    
+    offset = minima_blå-minima_rød
+    Total_spectra = []
+    total_visuable_spectra = []
+    average_situation = True
+    
+    for i in range(len(spektrum_rød)+offset):
+        if i <= minima_blå:
+            Total_spectra.append(spektrum_blå[i])
+        elif average_situation == True and min(spektrum_blå[i:i+30]) > 0 :
+            Total_spectra.append((spektrum_blå[i]+spektrum_rød[i-offset])/2)
+        else:
+            average_situation = False
+            Total_spectra.append(spektrum_rød[i-offset])
+    
+    for i in Total_spectra:
+        if i > 0:
+            total_visuable_spectra.append(i/max(Total_spectra))
    
     if samle == False:
         fig, ax = plt.subplots(2,1,figsize = (12,6))
@@ -293,23 +311,6 @@ def fælles_punkt(spektrum_blå, spektrum_rød, blå_punkt, rød_punkt, samle ):
     if samle:
         
         fig, ax = plt.subplots(1,1,figsize = (12,4))
-        offset = minima_blå-minima_rød
-        Total_spectra = []
-        total_visuable_spectra = []
-        average_situation = True
-        
-        for i in range(len(spektrum_rød)+offset):
-            if i <= minima_blå:
-                Total_spectra.append(spektrum_blå[i])
-            elif average_situation == True and min(spektrum_blå[i:i+30]) > 0 :
-                Total_spectra.append((spektrum_blå[i]+spektrum_rød[i-offset])/2)
-            else:
-                average_situation = False
-                Total_spectra.append(spektrum_rød[i-offset])
-        
-        for i in Total_spectra:
-            if i > 0:
-                total_visuable_spectra.append(i/max(Total_spectra))
         
 
         ax.plot(total_visuable_spectra, linewidth = 1, color = "black")
@@ -483,7 +484,7 @@ def normaliser(kalibreret_x, spektrum, afvigelse):
         if kalibreret_x[i-40]<471<kalibreret_x[i+40]:
             index_location_of_shit.append(i)
             local_minimums.append(np.min(normalised_spectre_try[i-20:i+20]))
-            
+    
     min_location = np.min(local_minimums)
     the_index_location = index_location_of_shit[np.where(local_minimums == min_location)[0][0]]
     
