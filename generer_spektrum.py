@@ -600,7 +600,7 @@ def sammenlign_med_solen(kalibreret_x,normalisered_spektrum):
     fig.savefig(figure_path)
 
 def Find_molekyler(kalibreret_x, normalisered_spektrum, molekyle = None):   
-    x, y = plot_dat_file("/content/spektroskopi/g2v_normaliseret.dat.dat")
+    x, y = plot_dat_file("/content/spektroskopi/g2v_normaliseret.dat")
     # x, y = plot_dat_file(r"C:\Users\nebse\Desktop\Jupiter\Spectroscopy\solen\g2v - absorptionslinjer 2.dat")
     fig, ax = plt.subplots(1,1,figsize = (12,6))
 
