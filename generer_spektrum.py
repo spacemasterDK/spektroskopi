@@ -361,7 +361,7 @@ def kalibreret_graf(spektrum, absorptions_linjer, tabel_værdier, kalibrering):
         
         ax[1].plot(xs,ys, linewidth = 1, color = "black")
         # ax[1].set_title("Solens Spektrum")
-        ax[1].set_xlabel("Bølgelængde")
+        ax[1].set_xlabel("Bølgelængde (nm)")
         ax[1].set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
        
         ax[0].text(0.05, 0.90, "Vores Spektrum", transform=ax[0].transAxes,  
@@ -393,7 +393,7 @@ def kalibreret_graf(spektrum, absorptions_linjer, tabel_værdier, kalibrering):
         
         ax.plot(x_axis,spektrum, linewidth = 1, color = "black")
         ax.set_title("Spektrum (kalibreret)")
-        ax.set_xlabel("Bølgelængde")
+        ax.set_xlabel("Bølgelængde (nm)")
         ax.set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
         ax.set_yticklabels([])
         ax.set_yticks([])
@@ -522,7 +522,7 @@ def normaliser(kalibreret_x, spektrum, afvigelse):
     ax[1].set_title("Normaliseret Spektrum (Spektrum/blød graf)")
     ax[1].set_yticklabels([])
     ax[1].set_yticks([])
-    ax[1].set_xlabel("Bølgelængde")
+    ax[1].set_xlabel("Bølgelængde (nm)")
     ax[1].set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
     
     figur_mappe = "Grafer"
@@ -591,7 +591,7 @@ def sammenlign_med_solen(kalibreret_x,normalisered_spektrum):
     ax.plot(x_axis,normalisered_sol, linewidth = 1, color = "#1f77b4", label = "Solens Spektrum")
     
     ax.legend()
-    ax.set_xlabel("Bølgelængde")
+    ax.set_xlabel("Bølgelængde (nm)")
     ax.set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
     ax.set_yticklabels([])
     ax.set_yticks([])
@@ -673,7 +673,7 @@ def Find_molekyler(kalibreret_x, normalisered_spektrum, molekyle = None):
     ax.plot(x_axis,normalisered_sol, linewidth = 1, color = "#1f77b4")
     # ax.legend(bbox_to_anchor=(0, 0.5), loc='center right')
     ax.legend()
-    ax.set_xlabel("Bølgelængde")
+    ax.set_xlabel("Bølgelængde (nm)")
     ax.set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
     ax.set_yticklabels([])
     ax.set_yticks([])
@@ -751,7 +751,7 @@ def Find_molekyler(kalibreret_x, normalisered_spektrum, molekyle = None):
 #     ax[1].set_title("Normaliseret Spektrum (Spektrum/blød graf)")
 #     ax[1].set_yticklabels([])
 #     ax[1].set_yticks([])
-#     ax[1].set_xlabel("Bølgelængde")
+#     ax[1].set_xlabel("Bølgelængde (nm)")
 #     ax[1].set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
     
 #     return normalised_spectre
