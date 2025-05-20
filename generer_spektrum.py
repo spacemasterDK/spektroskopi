@@ -238,10 +238,10 @@ def generer_spektrum_fra_videoer(video_1,video_2,antal_billeder, roter=False):
     ax[0].plot(spectre_blå, linewidth = 1, color = "#1f77b4")
     ax[1].plot(spectre_rød, linewidth = 1, color = "#d62728")
 
-    ax[0].text(0.05, 0.90, "Blå del af spektret", transform=ax[0].transAxes,  
+    ax[0].text(0.05, 0.90, "Blå del af spektrum", transform=ax[0].transAxes,  
         fontsize=12, verticalalignment='top', horizontalalignment='left',  
         bbox=dict(facecolor='white', alpha=0.7, edgecolor='black'))
-    ax[1].text(0.95, 0.90, "Rød del af spektret", transform=ax[1].transAxes,  
+    ax[1].text(0.95, 0.90, "Rød del af spektrum", transform=ax[1].transAxes,  
         fontsize=12, verticalalignment='top', horizontalalignment='right',  
         bbox=dict(facecolor='white', alpha=0.7, edgecolor='black'))
 
