@@ -675,7 +675,7 @@ def Find_molekyler(kalibreret_x, normalisered_spektrum, molekyle = None):
     # ax.legend(bbox_to_anchor=(0, 0.5), loc='center right')
     ax.legend()
     
-    ax.set_title(f"Viste linjer for {molekyle}")
+    ax.set_title(f"Vores spektrum med absorptionslinjer for {molekyle}")
     
     ax.set_xlabel("Bølgelængde (nm)")
     ax.set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
