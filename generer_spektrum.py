@@ -591,6 +591,7 @@ def sammenlign_med_solen(kalibreret_x,normalisered_spektrum):
     ax.plot(x_axis,normalisered_sol, linewidth = 1, color = "#1f77b4", label = "Solens Spektrum")
     
     ax.legend()
+    ax.set_title("Normaliseret Spektrum af planeten og solen")
     ax.set_xlabel("Bølgelængde (nm)")
     ax.set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
     ax.set_yticklabels([])
@@ -673,6 +674,9 @@ def Find_molekyler(kalibreret_x, normalisered_spektrum, molekyle = None):
     ax.plot(x_axis,normalisered_sol, linewidth = 1, color = "#1f77b4")
     # ax.legend(bbox_to_anchor=(0, 0.5), loc='center right')
     ax.legend()
+    
+    ax.set_title(f"Viste linjer for {molekyle}")
+    
     ax.set_xlabel("Bølgelængde (nm)")
     ax.set_xticks([400,425, 450,475, 500, 525, 550,575, 600,625, 650,675, 700])
     ax.set_yticklabels([])
